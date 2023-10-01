@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="./script.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #142c43; 
+            color: #3b96dc; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            margin-top: 0;
+        }
+
+        .text-to-speech-button {
+            background-color: #142c43;
+            color: #3b96dc;
+            border: solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        /* Style on hover for the Text To Speech button */
+        .text-to-speech-button:hover {
+            background-color: white;
+            color: #142c43;
+        }
+
+        /* Style for the file input */
+        .file-input {
+            display: none;
+        }
+
+        /* Style for the "Choose File" label */
+        .file-label {
+            background-color: #142c43;
+            color: #3b96dc;
+            border: solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+
+        #file-name {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+        #generate-audio-button {
+            background-color: #142c43;
+            color: #3b96dc;
+            border: solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+
+
+        #generate-audio-button:hover {
+            background-color: white;
+            color: #142c43;
+        }
+
+
+        #success-message {
+            color: rgb(97, 246, 97);
+            font-size: 18px;
+            display: none;
+        }
+
+
+        #download-audio-button {
+            background-color: #142c43;
+            color: #3b96dc;
+            border: solid white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            display: none;
+            margin-top: 10px;
+        }
+
+        
+        #download-audio-button:hover {
+            background-color: white;
+            color: #142c43;
+        }
+        
+        .microphone-icon {
+        margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Text To Speech</h1>
+
+    <input type="file" id="file-input" class="file-input">
+  
+    <label for="file-input" class="file-label">Choose File</label>
+
+    <div id="file-name"></div>
+
+    <button id="generate-audio-button">Generate Audio</button>
+
+    <div id="success-message">Audio has been generated and can be downloaded.</div>
+
+    <div id="download-container">
+    
+    <a href="#" id="download-audio-button" download> Download Audio <span class="microphone-icon">🔊</span></a>
+    </div>
+
+    <script>
+        
+        const fileInput = document.getElementById('file-input');
+        const fileNameDisplay = document.getElementById('file-name');
+        const generateAudioButton = document.getElementById('generate-audio-button');
+        const successMessage = document.getElementById('success-message');
+        const downloadAudioButton = document.getElementById('download-audio-button');
+
+        fileInput.addEventListener('change', () => {
+        
+            const selectedFile = fileInput.files[0];
+            if (selectedFile) {
+                fileNameDisplay.textContent = `Selected file: ${selectedFile.name}`;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+
+        generateAudioButton.addEventListener('click', () => {
+        
+            successMessage.style.display = 'block';
+            downloadAudioButton.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

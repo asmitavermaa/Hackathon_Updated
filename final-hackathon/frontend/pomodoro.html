@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="./pomodoro.js"></script>
+    <style>
+        body {
+            background-color: #142c43;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 36px;
+            color: #3b96dc;
+        }
+
+        .custom-durations {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label {
+        font-size: 18px;
+        color: #fff;
+        margin-right: 10px;
+    }
+
+    input[type="number"] {
+        width: 50px;
+        height: 30px;
+        font-size: 16px;
+        padding: 5px;
+        border: 1px solid #3b96dc;
+        border-radius: 5px;
+        text-align: center;
+        color: #3b96dc;
+    }
+
+    label + input[type="number"] {
+        margin-right: 20px;
+    }
+
+    .timer {
+        font-size: 48px;
+        margin-top: 20px;
+        color: #3b96dc;
+    }
+
+    .controls {
+        margin-top: 30px;
+    }
+
+    button {
+        background-color: #3b96dc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 0 10px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <audio id="timer-sound">
+        <source src="./achievement-bell.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="custom-durations">
+        <label for="work-duration">Work Duration (minutes):</label>
+        <input type="number" id="work-duration" value="25" min="1">
+        <label for="break-duration">Break Duration (minutes):</label>
+        <input type="number" id="break-duration" value="5" min="1">
+    </div>
+
+    <div class="timer" id="timer">25:00</div>
+
+    <div class="controls">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
+</body>
+</html>

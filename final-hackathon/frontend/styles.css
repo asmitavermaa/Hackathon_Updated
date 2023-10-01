@@ -1,0 +1,123 @@
+body {
+    background-color: #142c43;
+    color: #3b96dc;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.adhd {
+    color: white;
+}
+
+p {
+    text-align:justify;
+    max-width: 100%;
+    font-size: 20px;
+    margin: 20px 20px;
+}
+
+.menu-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu-button {
+    background-color: white;
+    color: #3b96dc;
+    border: solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 20px;
+}
+
+.menu-button:last-child {
+    margin-right: 0;
+}
+
+.menu-button:hover {
+    background-color: #3b96dc;
+    color: #fff;
+}
+
+#chatbot
+{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+li label {
+    font-size: 20px;
+}
+.completed {
+    text-decoration: line-through;
+    color: #888; 
+}
+
+input[type="text"] {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%; 
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #3b96dc;
+    border-radius: 5px;
+}
+
+
+input[type="text"]::placeholder {
+    color: #3b96dc;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 10px; 
+    margin: 10px 0; 
+}
+
+/* Style the input field */
+.input-box input[type="text"] {
+    flex: 1; 
+    border: none; 
+    outline: none; 
+    padding: 5px; 
+}
+
+/* Style the send button */
+.input-box button {
+    background-color: #3b96dc; 
+    color: #fff; 
+    border: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+label + input[type="number"] {
+    margin-right: 20px;
+}
